@@ -1,0 +1,61 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta with rich meat sauce. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
+      "ingredients": "Spaghetti, ground beef, tomato sauce, onions, garlic, olive oil, herbs",
+      "instructions": "Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
+      "thumbnail": "https://feelgoodfoodie.net/wp-content/uploads/2023/04/Pasta-Bolognese-TIMG.jpg",
+      "likes": 12,
+      "isFavorite": false,
+      "totalPreparationTime": 30,
+      "comments": [
+        {
+          "author": "Alice",
+          "text": "Delicious!"
+        }
+      ],
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "Spaghetti Bolognese 1",
+      "description": "Classic Italian pasta with rich meat sauce.",
+      "ingredients": "Spaghetti, ground beef, tomato sauce, onions, garlic, olive oil, herbs",
+      "instructions": "Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
+      "thumbnail": "https://feelgoodfoodie.net/wp-content/uploads/2023/04/Pasta-Bolognese-TIMG.jpg",
+      "likes": 15,
+      "isFavorite": false,
+      "totalPreparationTime": 30,
+      "comments": [
+        {
+          "author": "Alice",
+          "text": "Delicious!"
+        }
+      ],
+      "authorId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "email": "alice@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "password": "password456"
+    },
+    {
+      "id": "4c0b",
+      "name": "saba",
+      "email": "saba@gmail.com",
+      "password": "123123P",
+      "favoriteRecipes": []
+    }
+  ]
+}

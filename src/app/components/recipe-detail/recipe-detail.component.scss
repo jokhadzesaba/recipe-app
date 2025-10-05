@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  align-items: center;
+  .title {
+    justify-content: center;
+    padding: 4%;
+  }
+  .img-ingredients {
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    img {
+      width: 500px;
+      height: 60%;
+      border-radius: 10px;
+    }
+    .list{
+        li{
+            padding: 4px;
+        }
+        font-size: 22px;
+    }
+  }
+  .main-text{
+    padding: 4%;
+    div{
+        border-bottom: 1px solid #F5DCC8;
+    }
+    .description,.instructions{
+        margin-bottom: 3%;
+    }
+    >div:last-child{
+        gap: 5%;
+    }
+  }
+}

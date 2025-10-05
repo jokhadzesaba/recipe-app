@@ -1,0 +1,19 @@
+<form [formGroup]="recipeForm" (ngSubmit)="submit()">
+  <label>Title:</label>
+  <input formControlName="title" />
+  <div *ngIf="recipeForm.get('title')?.invalid && recipeForm.get('title')?.touched">Required</div>
+
+  <label>Description:</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Ingredients:</label>
+  <textarea formControlName="ingredients"></textarea>
+
+  <label>Instructions:</label>
+  <textarea formControlName="instructions"></textarea>
+
+  <label>Thumbnail URL:</label>
+  <input formControlName="thumbnail" />
+
+  <button type="submit" [disabled]="recipeForm.invalid">Save</button>
+</form>

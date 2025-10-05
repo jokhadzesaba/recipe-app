@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="recipes flex">
+    <div *ngFor="let recipe of displayedRecipes" class="recipe">
+      <div class="image-container">
+        <img [src]="recipe.thumbnail" />
+        <button [routerLink]="['/recipe', recipe.id]" class="details-btn">Details</button>
+      </div>
+      <div class="flex column info">
+        <span>{{ recipe.title }}</span>
+        <span>{{ recipe.description }}</span>
+      </div>
+    </div>
+  </div>
+</div>
