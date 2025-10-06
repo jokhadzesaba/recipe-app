@@ -1,8 +1,8 @@
 export interface User {
-  id?: number;
+  id?: string;
   name: string;
   email: string;
   password: string;
-  Photo?:string;
-  favoriteRecipes: number[]; // IDs of favorite recipes
+  photo?:string;
+  favoriteRecipes: string[];
 }

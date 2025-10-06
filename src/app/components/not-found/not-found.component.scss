@@ -1,0 +1,77 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe6d9, #fff8f6);
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+
+.not-found-card {
+  text-align: center;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .error-code {
+    font-size: 100px;
+    font-weight: 900;
+    color: #f57c00;
+    margin: 0;
+  }
+
+  .error-message {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0 10px;
+    color: #1e1e1e;
+  }
+
+  .error-subtext {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 30px;
+  }
+
+  .home-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #f57c00;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e56f00;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .not-found-card {
+    padding: 40px 20px;
+
+    .error-code {
+      font-size: 70px;
+    }
+
+    .error-message {
+      font-size: 20px;
+    }
+
+    .error-subtext {
+      font-size: 14px;
+    }
+  }
+}

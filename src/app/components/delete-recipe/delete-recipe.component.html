@@ -1,0 +1,12 @@
+<div class="delete-container" *ngIf="!loading">
+  <div class="delete-card">
+    <h2>Delete Recipe</h2>
+    <p *ngIf="recipe">Are you sure you want to delete <strong>{{ recipe.title }}</strong>?</p>
+    <p *ngIf="error">{{ error }}</p>
+
+    <div class="buttons">
+      <button (click)="cancel()" class="cancel-btn">Cancel</button>
+      <button (click)="delete()" class="delete-btn" [disabled]="!!error">Delete</button>
+    </div>
+  </div>
+</div>

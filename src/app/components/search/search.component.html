@@ -1,0 +1,14 @@
+<app-search-bar></app-search-bar>
+<div class="container">
+  <h2 *ngIf="query">Search results for "{{ query | capitalizeFirst }}"</h2>
+  <h2 *ngIf="filterType === 'favorites' && !query">Your favorite recipes:</h2>
+  <h2 *ngIf="filterType === 'time' && !query">New Recipes:</h2>
+  <h2 *ngIf="filterType !== 'favorites' && filterType !== 'time' && !query">
+    Sorted By {{ filterType | capitalizeFirst }}:
+  </h2>
+
+  <app-sorted-recipes
+    [filterType]="filterType"
+    [query]="query"
+  ></app-sorted-recipes>
+</div>

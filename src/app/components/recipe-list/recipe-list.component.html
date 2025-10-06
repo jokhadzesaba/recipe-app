@@ -1,42 +1,35 @@
-<div class="search-bar">
-  <input
-    type="text"
-    [(ngModel)]="searchText"
-    placeholder="Search recipes..."
-    (input)="filterRecipes()"
-  />
-  <!-- <label>
-    <input type="checkbox" [(ngModel)]="showFavoritesOnly" (change)="filterRecipes()" />
-    Show Favorites Only
-  </label> -->
-</div>
-<div class="container">
-  <div class="recipes">
-    <h3>Most Popular</h3>
-    <app-sorted-recipes [filterType]="'popularity'"></app-sorted-recipes>
-  </div>
-  <div class="recipes">
-    <h3>New Recipes</h3>
-    <app-sorted-recipes [filterType]="'time'"></app-sorted-recipes>
-  </div>
-  <div class="recipes">
-    <h3>Quick</h3>
-    <app-sorted-recipes [filterType]="'time'"></app-sorted-recipes>
-  </div>
+<app-search-bar></app-search-bar>
+<div class="buttons">
+  <button *ngIf="user$" routerLink="/add" class="add-recipe-btn">
+    <span>+</span> Add Recipe
+  </button>
+  <button
+    *ngIf="user$"
+    class="add-recipe-btn"
+    [routerLink]="['/search']"
+    [queryParams]="{ filter: 'favorites' }"
+  >
+    Favorites
+  </button>
 </div>
 
-<!-- <div class="recipe-cards">
-  <div class="card" *ngFor="let recipe of filteredRecipes">
-    <img [src]="recipe.thumbnail" alt="{{ recipe.title }}" />
-    <h3>{{ recipe.title }}</h3>
-    <p>{{ recipe.description }}</p>
-    <div class="buttons">
-      <button (click)="toggleFavorite(recipe)">
-        {{ userService.hasFavorited(recipe.id) ? 'Unfavorite' : 'Favorite' }}
-      </button>
-      <a [routerLink]="['/recipe', recipe.id]">View</a>
-      <a *ngIf="recipe['authorId'] === userService.getCurrentUser().id" [routerLink]="['/edit', recipe.id]">Edit</a>
-    </div>
+<div class="container">
+  <div class="recipes">
+    <button [routerLink]="['/search']" [queryParams]="{ filter: 'popularity' }">
+      Most Popular
+    </button>
+    <app-sorted-recipes [sliceArray]="8" [filterType]="'popularity'"></app-sorted-recipes>
+  </div>
+  <div class="recipes">
+    <button [routerLink]="['/search']" [queryParams]="{ filter: 'time' }">
+      New Recipes
+    </button>
+    <app-sorted-recipes [sliceArray]="8" [filterType]="'time'"></app-sorted-recipes>
+  </div>
+  <div class="recipes">
+    <button [routerLink]="['/search']" [queryParams]="{ filter: 'quick' }">
+      Quick
+    </button>
+    <app-sorted-recipes [sliceArray]="8" [filterType]="'quick'"></app-sorted-recipes>
   </div>
 </div>
-<h1>Sba</h1> -->

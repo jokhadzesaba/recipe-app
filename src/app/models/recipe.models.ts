@@ -1,13 +1,14 @@
 export interface Recipe {
-  id: number;
+  id: string;
   title: string;
   description: string;
   ingredients: string;
   instructions: string;
-  totalPreparationTime:number;
+  prepTime: number;
   thumbnail: string;
-  isFavorite: boolean;
+
   likes: number;
-  comments: { author: string; text: string }[];
-  authorId: number; 
+
+  authorId: string;
+  date: Date;
 }

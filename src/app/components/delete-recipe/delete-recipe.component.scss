@@ -1,0 +1,64 @@
+.delete-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  font-family: "Inter", sans-serif;
+}
+
+.delete-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 400px;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #1e1e1e;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 24px;
+    color: #333;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &.cancel-btn {
+        background: #ccc;
+        color: #fff;
+
+        &:hover {
+          background: #b3b3b3;
+        }
+      }
+
+      &.delete-btn {
+        background: #e74c3c;
+        color: #fff;
+
+        &:hover {
+          background: #c0392b;
+        }
+
+        &:disabled {
+          background: #f5a9a8;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

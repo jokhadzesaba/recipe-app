@@ -14,23 +14,42 @@
       height: 60%;
       border-radius: 10px;
     }
-    .list{
-        li{
-            padding: 4px;
-        }
-        font-size: 22px;
+    .list {
+      li {
+        padding: 4px;
+      }
+      font-size: 22px;
     }
   }
-  .main-text{
+  .main-text {
     padding: 4%;
-    div{
-        border-bottom: 1px solid #F5DCC8;
+    div {
+      border-bottom: 3px solid #f5dcc8;
     }
-    .description,.instructions{
-        margin-bottom: 3%;
+    .description,
+    .instructions {
+      margin-bottom: 3%;
     }
-    >div:last-child{
-        gap: 5%;
+    > div:last-child {
+      gap: 5%;
+    }
+    .button-group {
+      border: none;
+      width: 100%;
+      button {
+        margin-right: 2%;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 }

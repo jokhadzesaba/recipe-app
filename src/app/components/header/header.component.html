@@ -1,16 +1,21 @@
 <div class="container">
-  <div class="inside-container ">
+  <div class="inside-container">
     <div class="flex">
       <h3 routerLink="/feed">Culinary Canvas</h3>
     </div>
-    <div class="flex">
+
+    <div *ngIf="user$ | async as user" class="user flex">
       <div class="img-container">
-        <img src="assets/spangebob.webp" alt="img" />
+        <img src="../../../assets/spangebob.webp" alt="User photo" />
       </div>
       <div class="user-info flex column">
-        <span>Saba</span>
-        <span>Saba@gmail.com</span>
+        <span>{{ user.name }}</span>
+        <span>{{ user.email }}</span>
+        <a (click)="logOut()">Log out</a>
       </div>
+    </div>
+    <div *ngIf="!(user$ | async)">
+      <a routerLink="/login"> Login</a>
     </div>
   </div>
 </div>

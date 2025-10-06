@@ -10,12 +10,15 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { TestComponent } from './components/test/test.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/registrate/registrate.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SortedRecipesComponent } from './components/sorted-recipes/sorted-recipes.component';
 import { SplitByCommaPipe } from "./pipes/split-by-comma.pipe";
+import { CapitalizeFirstPipe } from './pipes/capitalaze-first.pipe';
+import { DeleteRecipeComponent } from './components/delete-recipe/delete-recipe.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,13 @@ import { SplitByCommaPipe } from "./pipes/split-by-comma.pipe";
     RecipeDetailComponent,
     RecipeFormComponent,
     NotFoundComponent,
-    TestComponent,
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    SortedRecipesComponent
+    SortedRecipesComponent,
+    DeleteRecipeComponent,
+    SearchComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { SplitByCommaPipe } from "./pipes/split-by-comma.pipe";
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    SplitByCommaPipe
+    SplitByCommaPipe,
+    CapitalizeFirstPipe
 ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,26 +1,5 @@
-<!-- <div *ngIf="recipe" class="recipe-detail">
-  <img [src]="recipe.thumbnail" alt="{{ recipe.title }}" />
-  <h2>{{ recipe.title }}</h2>
-  <p>{{ recipe.description }}</p>
-  <h3>Ingredients</h3>
-  <p>{{ recipe.ingredients }}</p>
-  <h3>Instructions</h3>
-  <p>{{ recipe.instructions }}</p>
+<app-search-bar></app-search-bar>
 
-  
-  <button (click)="toggleFavorite()">
-    {{ userService.hasFavorited(recipe.id) ? 'Unfavorite' : 'Favorite' }}
-  </button>
-
-  <h3>Comments</h3>
-  <ul>
-    <li *ngFor="let comment of recipe.comments">
-      <strong>{{ comment.author }}:</strong> {{ comment.text }}
-    </li>
-  </ul>
-  <input [(ngModel)]="newComment" placeholder="Add a comment..." />
-  <button (click)="addComment()">Comment</button>
-</div> -->
 <div *ngIf="recipe" class="container">
   <div class="title flex">
     <h3>{{ recipe.title }}</h3>
@@ -32,7 +11,7 @@
     <div class="list">
       <h3>Ingredients:</h3>
       <li *ngFor="let ingredient of recipe.ingredients | splitByComma">
-        {{ ingredient }}
+        {{ ingredient | capitalizeFirst }}
       </li>
     </div>
   </div>
@@ -46,8 +25,39 @@
       <p>{{ recipe.instructions }}</p>
     </div>
     <div class="flex">
-      <p>Prep Time: {{ recipe.totalPreparationTime }} Minute</p>
+      <p>Prep Time: {{ recipe.prepTime }} Minute</p>
       <p>Likes: {{ recipe.likes }}</p>
+      <div class="button-group">
+        <button
+          *ngIf="userId && !isFavorite(recipe.id)"
+          (click)="addToFavorites(recipe.id)"
+          class="details-btn"
+        >
+          Add to Favorites
+        </button>
+        <button
+          *ngIf="userId && isFavorite(recipe.id)"
+          (click)="removeFromFavorites(recipe.id)"
+          class="details-btn"
+        >
+          Remove from Favorites
+        </button>
+
+        <button
+          *ngIf="userId === recipe.authorId"
+          [routerLink]="['/edit', recipe.id]"
+          class="details-btn"
+        >
+          Edit
+        </button>
+        <button
+          *ngIf="userId === recipe.authorId"
+          [routerLink]="['/delete', recipe.id]"
+          class="details-btn"
+        >
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </div>

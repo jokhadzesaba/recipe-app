@@ -1,40 +1,100 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "title": "Spaghetti Bolognese",
-      "description": "Classic Italian pasta with rich meat sauce. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
-      "ingredients": "Spaghetti, ground beef, tomato sauce, onions, garlic, olive oil, herbs",
-      "instructions": "Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
-      "thumbnail": "https://feelgoodfoodie.net/wp-content/uploads/2023/04/Pasta-Bolognese-TIMG.jpg",
-      "likes": 12,
-      "isFavorite": false,
-      "totalPreparationTime": 30,
-      "comments": [
-        {
-          "author": "Alice",
-          "text": "Delicious!"
-        }
-      ],
-      "authorId": 1
+      "id": "77b3",
+      "title": "egg",
+      "description": "boiled egg",
+      "ingredients": "eggs, salt, water",
+      "instructions": "boil egg in water for 8 minutes",
+      "thumbnail": "https://afoodcentriclife.com/wp-content/uploads/2018/06/hard-boiled-eggs-37-500x375.jpg",
+      "prepTime": 8,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:25:11.210Z"
     },
     {
-      "id": 2,
-      "title": "Spaghetti Bolognese 1",
-      "description": "Classic Italian pasta with rich meat sauce.",
-      "ingredients": "Spaghetti, ground beef, tomato sauce, onions, garlic, olive oil, herbs",
-      "instructions": "Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta. Cook pasta. In a pan, cook beef with onions and garlic. Add tomato sauce and herbs. Simmer. Serve sauce over pasta.",
-      "thumbnail": "https://feelgoodfoodie.net/wp-content/uploads/2023/04/Pasta-Bolognese-TIMG.jpg",
-      "likes": 15,
-      "isFavorite": false,
-      "totalPreparationTime": 30,
-      "comments": [
-        {
-          "author": "Alice",
-          "text": "Delicious!"
-        }
-      ],
-      "authorId": 1
+      "id": "dd89",
+      "title": "fried potatos",
+      "description": "fried potatoes crispy and delicius",
+      "ingredients": "potato 2-3, oil salt",
+      "instructions": "frie it",
+      "thumbnail": "https://www.allrecipes.com/thmb/-Qlhx70a3HwawPd51kSIiGj-hpE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4488416-0627cab55d4e44ec80f974fbc67befb7.jpg",
+      "prepTime": 15,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:26:43.043Z"
+    },
+    {
+      "id": "1116",
+      "title": "beans",
+      "description": "beans ",
+      "ingredients": "beans, water, herbs",
+      "instructions": "boild beans",
+      "thumbnail": "https://i0.wp.com/www.innatthecrossroads.com/wp-content/uploads/2014/01/DSC054241.jpg?resize=614%2C408&ssl=1",
+      "prepTime": 30,
+      "likes": 0,
+      "authorId": "1",
+      "date": "2025-10-06T12:35:20.392Z"
+    },
+    {
+      "id": "1116",
+      "title": "Beans",
+      "description": "Cooked beans with herbs",
+      "ingredients": "beans, water, herbs",
+      "instructions": "Rinse the beans thoroughly under cold water and remove any debris.\nPlace the beans in a pot with enough water to cover them and bring to a boil.\nReduce heat and simmer for 30-40 minutes until tender, then season with herbs and serve.",
+      "thumbnail": "https://i0.wp.com/www.innatthecrossroads.com/wp-content/uploads/2014/01/DSC054241.jpg?resize=614%2C408&ssl=1",
+      "prepTime": 30,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:35:20.392Z"
+    },
+    {
+      "id": "1117",
+      "title": "Pasta",
+      "description": "Classic Italian pasta",
+      "ingredients": "pasta, tomato sauce, olive oil",
+      "instructions": "Boil pasta in salted water until al dente.\nWhile pasta cooks, heat tomato sauce in a separate pan and season to taste.\nDrain pasta, toss with the sauce and a drizzle of olive oil, then serve hot.",
+      "thumbnail": "https://www.marthastewart.com/thmb/aVMX2qtJCGCxLa9nU18qYy9NpOw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cacio-e-pepe-opener-mld109436_horiz-1222-425e28fdf7d4403abe05b1f6ab24d106.jpg",
+      "prepTime": 20,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:40:00.000Z"
+    },
+    {
+      "id": "1118",
+      "title": "Salad",
+      "description": "Fresh garden salad",
+      "ingredients": "lettuce, tomato, cucumber, dressing",
+      "instructions": "Wash and chop all vegetables into bite-sized pieces.\nCombine them in a large bowl and prepare dressing separately.\nPour dressing over the salad, toss gently to coat, and serve immediately.",
+      "thumbnail": "https://feelgoodfoodie.net/wp-content/uploads/2023/03/Everyday-Garden-Salad-07.jpg",
+      "prepTime": 10,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:45:00.000Z"
+    },
+    {
+      "id": "1119",
+      "title": "Omelette",
+      "description": "Fluffy cheese omelette",
+      "ingredients": "eggs, cheese, butter, salt, pepper",
+      "instructions": "Crack eggs into a bowl and whisk thoroughly.\nHeat butter in a non-stick pan, pour in the eggs, and cook over medium heat.\nSprinkle cheese, fold the omelette, cook until golden, and serve warm.",
+      "thumbnail": "https://thelaughingcow-sea.com/wp-content/uploads/2023/08/shutterstock_304454942.webp",
+      "prepTime": 15,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:50:00.000Z"
+    },
+    {
+      "id": "1120",
+      "title": "Pancakes",
+      "description": "Fluffy breakfast pancakes",
+      "ingredients": "flour, milk, eggs, sugar, butter",
+      "instructions": "In a bowl, mix flour, sugar, eggs, and milk until smooth.\nHeat a pan with butter, pour batter, and cook until bubbles form.\nFlip pancakes carefully, cook the other side until golden, and serve with syrup or fruit.",
+      "thumbnail": "https://www.delscookingtwist.com/wp-content/uploads/2022/01/Easy-Fluffy-American-Pancakes_1.jpg",
+      "prepTime": 25,
+      "likes": 0,
+      "authorId": "4c0b",
+      "date": "2025-10-06T12:55:00.000Z"
     }
   ],
   "users": [
@@ -42,19 +102,40 @@
       "id": "1",
       "name": "Alice",
       "email": "alice@example.com",
-      "password": "password123"
+      "password": "password123",
+      "favoriteRecipes": [
+        "77b3"
+      ],
+      "photo": "https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest?cb=20240420115914"
     },
     {
       "id": "2",
       "name": "Bob",
       "email": "bob@example.com",
-      "password": "password456"
+      "password": "password456",
+      "favoriteRecipes": [],
+      "photo": "https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest?cb=20240420115914"
     },
     {
       "id": "4c0b",
       "name": "saba",
       "email": "saba@gmail.com",
       "password": "123123P",
+      "favoriteRecipes": [],
+      "photo": "https://static.wikia.nocookie.net/cartoons/images/e/ed/Profile_-_SpongeBob_SquarePants.png/revision/latest?cb=20240420115914"
+    },
+    {
+      "id": "57ce",
+      "name": "sabaJokhadze",
+      "email": "saba@gmail.com",
+      "password": "123123123",
+      "favoriteRecipes": []
+    },
+    {
+      "id": "b9fe",
+      "name": "mari",
+      "email": "mari@gmail.com",
+      "password": "123123123",
       "favoriteRecipes": []
     }
   ]

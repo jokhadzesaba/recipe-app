@@ -3,7 +3,40 @@
     <div *ngFor="let recipe of displayedRecipes" class="recipe">
       <div class="image-container">
         <img [src]="recipe.thumbnail" />
-        <button [routerLink]="['/recipe', recipe.id]" class="details-btn">Details</button>
+        <div class="button-group">
+          <button [routerLink]="['/recipe', recipe.id]" class="details-btn">
+            Details
+          </button>
+          <button
+            *ngIf="userId && !isFavorite(recipe.id)"
+            (click)="addToFavorites(recipe.id)"
+            class="details-btn"
+          >
+            Add to Favorites
+          </button>
+          <button
+            *ngIf="userId && isFavorite(recipe.id)"
+            (click)="removeFromFavorites(recipe.id)"
+            class="details-btn"
+          >
+            Remove from Favorites
+          </button>
+
+          <button
+            *ngIf="userId === recipe.authorId"
+            [routerLink]="['/edit', recipe.id]"
+            class="details-btn"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="userId === recipe.authorId"
+            [routerLink]="['/delete', recipe.id]"
+            class="details-btn"
+          >
+            Delete
+          </button>
+        </div>
       </div>
       <div class="flex column info">
         <span>{{ recipe.title }}</span>

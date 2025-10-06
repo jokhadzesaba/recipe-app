@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password).subscribe(user => {
       if (user) {
-        this.router.navigate(['/recipes']);
+        this.router.navigate(['/feed']);
       } else {
         this.error = 'Invalid email or password';
       }

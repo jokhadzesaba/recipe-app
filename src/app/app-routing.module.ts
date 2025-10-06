@@ -5,24 +5,36 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { TestComponent } from './components/test/test.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/registrate/registrate.component';
+import { RecipeOwnerGuard } from './guards/recipe-guard.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { DeleteRecipeComponent } from './components/delete-recipe/delete-recipe.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'feed', pathMatch: 'full' },
   { path: 'feed', component: RecipeListComponent },
-  { path: 'test', component: TestComponent },
   { path: 'recipe/:id', component: RecipeDetailComponent },
   { path: 'add', component: RecipeFormComponent },
-  { path: 'edit/:id', component: RecipeFormComponent },
+  {
+    path: 'edit/:id',
+    component: RecipeFormComponent,
+    canActivate: [AuthGuard, RecipeOwnerGuard],
+  },
+  {
+    path: 'delete/:id',
+    component: DeleteRecipeComponent,
+    canActivate: [AuthGuard, RecipeOwnerGuard],
+  },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegisterComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: 'search', component: SearchComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
@@ -7,7 +13,7 @@ import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'app-registrate',
   templateUrl: './registrate.component.html',
-  styleUrls: ['./registrate.component.scss']
+  styleUrls: ['./registrate.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
@@ -15,15 +21,30 @@ export class RegisterComponent implements OnInit {
   error = '';
   success = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
-    }, { validator: this.passwordMatchValidator });
+    this.registerForm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+            this.uppercaseValidator,
+          ],
+        ],
+
+        confirmPassword: ['', Validators.required],
+      },
+      { validator: this.passwordMatchValidator }
+    );
   }
 
   get f() {
@@ -35,6 +56,10 @@ export class RegisterComponent implements OnInit {
     const confirm = group.get('confirmPassword')?.value;
     return password === confirm ? null : { mismatch: true };
   }
+  uppercaseValidator(control: AbstractControl): ValidationErrors | null {
+    const hasUppercase = /[A-Z]/.test(control.value);
+    return hasUppercase ? null : { noUppercase: true };
+  }
 
   onSubmit(): void {
     this.submitted = true;
@@ -43,22 +68,36 @@ export class RegisterComponent implements OnInit {
 
     if (this.registerForm.invalid) return;
 
-    const user: User = {
-      name: this.registerForm.value.name,
-      email: this.registerForm.value.email,
-      password: this.registerForm.value.password,
-      favoriteRecipes: []
-    };
+    const email = this.registerForm.value.email;
 
-    this.authService.register(user).subscribe({
-      next: () => {
-        this.success = 'Registration successful!';
-        this.router.navigate(['/login']);
-      },
-      error: err => {
-        this.error = 'Registration failed';
-        console.error(err);
+    // Check if email already exists
+    this.authService.getUsers().subscribe((users) => {
+      const emailExists = users.some(
+        (u) => u.email.toLowerCase() === email.toLowerCase()
+      );
+      if (emailExists) {
+        this.error = 'Email is already registered';
+        return;
       }
+
+      const user: User = {
+        name: this.registerForm.value.name,
+        email: email,
+        password: this.registerForm.value.password,
+        favoriteRecipes: [],
+      };
+
+      // Register new user
+      this.authService.register(user).subscribe({
+        next: () => {
+          this.success = 'Registration successful!';
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          this.error = 'Registration failed';
+          console.error(err);
+        },
+      });
     });
   }
 }

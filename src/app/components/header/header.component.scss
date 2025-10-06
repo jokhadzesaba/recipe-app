@@ -1,24 +1,27 @@
 .container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    border-bottom: 2px solid #F5DCC8;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 2px solid #f5dcc8;
   > .inside-container {
     width: 90%;
     display: flex;
     justify-content: space-between;
     > div:first-child {
-        width: 50%;
+      width: 50%;
       align-items: center;
       gap: 5%;
     }
-    >div:last-child{
-        align-items: center;
-        gap: 4%;
-        img{
-            width: 60px;
-            height: 60px;
+    .user {
+      > .img-container {
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 10px;
+          margin-right: 2px;
         }
+      }
     }
   }
 }
+
